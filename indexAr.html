@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Solid Desk</title>
+    <link rel = "icon" href ="imgs/icon.png" type = "image/x-icon">
+    <style>
+      @media (max-width:850px){
+  #degree-label{
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+}
+      #lang p{
+        font-size: 25px;
+        margin-bottom: 0;
+      }
+      .form-group{
+        direction: rtl !important;
+      }
+      .form-group input{
+        margin-right: 0;
+      }
+
+      .form-group .col-1{
+        margin-left: auto;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+      <script src="script.js"></script>
+      
+      <header class="header">
+             
+      </header>
+
+      <form action="https://sheetdb.io/api/v1/56hx9tpccnrxi" method="post" id="sheetdb-form">
+
+          <div id="lang">
+            <ul>
+              <li><a href="./index.html" id="switch-lang" class="switch-language" value="2" >Change the Language to English</a></li>
+            </ul>
+          </div>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <h2>البيانات الشخصية</h2>
+          <label id="name-label" for="name" class="label-fields"
+            >الاسم الكامل</label
+          >
+          <input
+            type="text"
+            name="data[fullName]"
+            id="name"
+            class="form-control"
+            placeholder="مثال: عثمان احمد منصور"
+            required
+          />
+          <!-- End Full Name -->
+
+          <!-- Job Title -->
+          <label id="name-label" for="job-title" class="label-fields"
+            >العنوان الوظيفي<span class="clue">(اختياري)</span></label
+          >
+          <input
+            type="text"
+            name="data[jobTitle]"
+            id="job-title"
+            class="form-control"
+            placeholder="مثال: مصمم مواقع"
+          />
+          <!-- End Job Title -->
+
+          <!-- Birth Date -->
+          <label id="birth-date-label" for="birth-date" class="label-fields"
+            >تاريخ الميلاد<span class="clue">(اختياري)</span></label
+          >
+          <input
+            type="text"
+            id="birth-date"
+            name="data[birthDate]"
+            class="form-control"
+            value=""
+            data-format="yyyymmdd"
+            data-seperator="/"
+            placeholder="السنة / الشهر / اليوم"
+            autocomplete="section-input_12 off"
+            aria-labelledby="label_12 sublabel_12_litemode"
+            inputmode="numeric"
+            date-val="1659530974629"
+          />
+          <!-- End Birth Date -->
+
+          <!-- Picture -->
+          <!-- <label id="picture-label" for="picture" class="label-fields"
+            >الصورة الشخصية<span class="clue">(اختياري)</span></label
+          >
+          <input type="file" class="form-control" id="picture" /> -->
+          <!-- End Picture -->
+
+          <!-- Profile -->
+          <p class="label-fields">
+            الملف الشخصي/ نبذة عنك<span class="clue">(اختياري)</span>
+          </p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="data[profile]"
+            placeholder="تحدث بايجاز عن نفسك هنا...."
+          ></textarea>
+        </div>
+        <!-- End Profile -->
+
+        <!-- Address -->
+        <div class="form-group">
+          <h2>بيانات التواصل</h2>
+          <label id="address-label" for="address" class="label-fields"
+            >العنوان</label
+          >
+          <input
+            type="text"
+            name="data[address]"
+            id="address"
+            class="form-control"
+            placeholder="مثال: العراق - بغداد"
+            required
+          />
+          <!-- End Address -->
+
+          <!-- Email -->
+          <label
+            id="email-label"
+            for="email"
+            class="label-fields"
+            class="label-fields"
+            >البريد الالكتروني</label
+          >
+          <input
+            type="email"
+            name="data[email]"
+            id="email"
+            class="form-control"
+            placeholder="مثال: oa80347@gmail.com"
+            required
+          />
+          <!-- End Email -->
+
+          <!-- Phone Number -->
+          <label id="phone-number-label" for="phone" class="label-fields"
+            >رقم الهاتف<span class="clue">(اختياري)</span></label
+          >
+          <input
+            type="text"
+            name="data[phoneNumber]"
+            id="phone-number"
+            class="form-control"
+            placeholder="مثال: 07824330132"
+          />
+        </div>
+        <!-- End Phone Number -->
+
+        <!-- institute & College & University -->
+        <div class="form-group">
+          <h2>التعليم</h2>
+          <div class="multi_label">
+            <label id="college-label" for="edu-name"
+            style="width: 75%"
+              >المعهد / الكلية</label
+            >
+            <label id="degree-label" for="degree" >التحصيل الدراسي</label>
+          </div>
+          <div class="rows" id="edu-rows">
+            <input
+              type="text"
+              name="data[edu]"
+              id="edu-1"
+              class="form-control edu-name col-1"
+              placeholder="مثال: كلية المعارف الجامعة - علوم حاسوب"
+            />
+
+            <!-- End College University -->
+
+            <!-- Degree -->
+            <select
+              id="degree-1"
+              name="degree"
+              class="form-control degree col-2"
+            >
+              <option disabled selected value>اختر تحصيلك الدراسي</option>
+              <option value="دبلوم">دبلوم</option>
+              <option value="بكالوريوس">بكالوريوس</option>
+              <option value="ماجستير">ماجستير</option>
+              <option value="دكتور">دكتور</option>
+            </select>
+          </div>
+          <!-- End Degree -->
+
+          <a id="add_more_skill" class="btnAdd" onclick="AddEduAr()">اضافة المزيد</a>
+          <a id="remove_skill" class="btnDel" onclick="RemoveEdu()"
+            >حذف حقل</a
+          >
+        </div>
+
+        <!-- Skills -->
+        <div class="form-group" id="skills">
+          <h2>المهارات</h2>
+          <div class="multi_label">
+            <label
+              id="skill-name-label"
+              for="skill-name"
+              style="width: 75%"
+              >اسم المهارة</label
+            >
+            <label id="skill-level-label" for="skill-level" >المستوى</label>
+          </div>
+
+          <div id="skill-rows" class="rows">
+            <input
+              type="text"
+              name="data[skill]"
+              id="skill-1"
+              class="form-control skill_name col-1"
+              placeholder="Ex: Microsoft Office"
+            />
+            <select
+              name="skill-level"
+              class="form-control skill_level col-2"
+              id="skill-level-1"
+            >
+              <option disabled selected value>اختر المستوى</option>
+              <option value="ممتاز">ممتاز</option>
+              <option value="جيد جداً">جيد جداً</option>
+              <option value="جيد">جيد</option>
+              <option value="متوسط">متوسط</option>
+              <option value="مقبول">مقبول</option>
+            </select>
+
+            <input
+              type="text"
+              name="data[skill]"
+              id="skill-2"
+              class="form-control skill_name col-1"
+              placeholder="Ex: Problem Solving"
+            />
+            <select
+              name="skill-level"
+              id="skill-level-2"
+              class="form-control skill_level col-2"
+            >
+              <option disabled selected value>اختر المستوى</option>
+              <option value="ممتاز">ممتاز</option>
+              <option value="جيد جداً">جيد جداً</option>
+              <option value="جيد">جيد</option>
+              <option value="متوسط">متوسط</option>
+              <option value="مقبول">مقبول</option>
+            </select>
+
+            <input
+              type="text"
+              name="data[skill]"
+              id="skill-3"
+              class="form-control skill_name col-1"
+              placeholder="Ex: Photoshop"
+            />
+            <select
+              name="skill-level"
+              id="skill-level-3"
+              class="form-control skill_level col-2"
+            >
+            <option disabled selected value>اختر المستوى</option>
+            <option value="ممتاز">ممتاز</option>
+            <option value="جيد جداً">جيد جداً</option>
+            <option value="جيد">جيد</option>
+            <option value="متوسط">متوسط</option>
+            <option value="مقبول">مقبول</option>
+            </select>
+          </div>
+
+          <a id="add_more_skill" class="btnAdd" onclick="AddSkillAr()"
+            >اضافة المزيد</a
+          >
+          <a id="remove_skill" class="btnDel" onclick="RemoveSkill()"
+            >حذف حقل</a
+          >
+        </div>
+        <!-- End Skills -->
+
+        <!-- Work Experiences -->
+        <div class="form-group" id="expert">
+          <h2>الخبرات العملية</h2>
+          <div class="multi_label">
+            <label
+              id="expert-name-label"
+              for="expert-name"
+              
+              >الخبرة</label
+            >
+            <label id="expert-date-label" for="expert-date" style="margin-right: 70%">التاريخ</label>
+          </div>
+
+          <div id="expert-rows" class="rows">
+            <input
+              type="text"
+              name="data[expert]"
+              id="expert-1"
+              class="form-control expert-name col-1"
+              placeholder="مثال: شركة اسياسيل - مهندس شبكات"
+            />
+            <input
+              type="text"
+              name="expert-date"
+              id="expert-date-1"
+              class="form-control expert-date col-2"
+              placeholder="Ex: 2021/12"
+            />
+          </div>
+
+          <a id="add_more_expert" class="btnAdd" onclick="addExpert()"
+            >اضافة المزيد</a
+          >
+          <a id="remove_expert" class="btnDel" onclick="removeExpert()"
+            >حذف حقل</a
+          >
+        </div>
+        <!-- End Work Experiences -->
+
+        <!-- Certificates -->
+        <div class="form-group" id="certificates">
+          <h2>الشهادات</h2>
+          <div class="multi_label">
+            <label
+              id="certificate-name-label"
+              for="certificate-name"
+              >اضف شهادتك</label
+            >
+          </div>
+
+          <div id="certificate-rows" class="rows">
+            <input
+              type="text"
+              name="data[certificate]"
+              id="certificate-1"
+              class="form-control certificate-name"
+              placeholder="Ex: Training of Trainers (TOT) - Introductory Crash Cource - IBCT"
+            />
+          </div>
+
+          <a id="add_more_certificate" class="btnAdd" onclick="AddCertificate()"
+            >اضافة المزيد</a
+          >
+          <a
+            id="remove_certificate"
+            class="btnDel"
+            onclick="RemoveCertificate()"
+            >حذف حقل</a
+          >
+        </div>
+        <!-- End Certificates -->
+
+        <!-- Languages -->
+        <div class="form-group" id="languages">
+          <h2>اللغات</h2>
+          <div class="multi_label">
+            <label id="language-label" for="language" 
+              >اللغة</label
+            >
+            <label id="language-level-label" for="language-level" style="margin-right: 71%">المستوى</label>
+          </div>
+
+          <div id="language-rows" class="rows">
+            <input
+              type="text"
+              name="data[language]"
+              id="language-1"
+              class="form-control language col-1"
+              value="العربية"
+              required
+            />
+            <select
+              name="language-level"
+              class="form-control language_level col-2"
+              id="language-level-1"
+              required
+            >
+            <option disabled selected value>اختر المستوى</option>
+            <option value="ممتاز" selected>ممتاز</option>
+            <option value="جيد جداً">جيد جداً</option>
+            <option value="جيد">جيد</option>
+            <option value="متوسط">متوسط</option>
+            <option value="مقبول">مقبول</option>
+            </select>
+
+            <input
+              type="text"
+              name="data[language]"
+              id="language-2"
+              class="form-control language col-1"
+              value="English"
+
+            />
+            <select
+              name="language-level"
+              class="form-control language_level col-2"
+              id="language-level-2"
+
+            >
+            <option disabled selected value>اختر المستوى</option>
+            <option value="ممتاز">ممتاز</option>
+            <option value="جيد جداً">جيد جداً</option>
+            <option value="جيد" selected>جيد</option>
+            <option value="متوسط">متوسط</option>
+            <option value="مقبول">مقبول</option>
+            </select>
+          </div>
+          <a id="add_more_skill" class="btnAdd" onclick="AddLanguageAr()"
+            >اضافة المزيد</a
+          >
+          <a id="remove_skill" class="btnDel" onclick="RemoveLanguage()"
+            >حذف حقل</a
+          >
+        </div>
+        <!-- End Languages -->
+
+        <!-- Notes -->
+        <div class="form-group">
+          <h2>الملاحظات</h2>
+          <p>اي اضافة او ملاحظة؟</p>
+          <textarea
+            id="comments"
+            class="input-textarea"
+            name="data[comment]"
+            placeholder="اضف تعليقك هنا..."
+          ></textarea>
+        </div>
+        <!-- End Notes -->
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button" onclick="done()">
+            ارسال
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      var form = document.getElementById('sheetdb-form');      
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      // you can put any JS code here
+      window.open('thanksAr.html', '_self');
+    });
+  });
+  </script>
+  </body>
+</html>
